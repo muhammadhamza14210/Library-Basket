@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/text_view_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp"/>
+
+    <!-- Author -->
+    <TextView
+        android:id="@+id/text_view_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:layout_marginBottom="2dp"/>
+
+    <!-- Genre -->
+    <TextView
+        android:id="@+id/text_view_genre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:layout_marginBottom="2dp"/>
+
+    <!-- Publication Year -->
+    <TextView
+        android:id="@+id/text_view_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:layout_marginBottom="2dp"/>
+
+    <!-- Read Status TextView -->
+    <TextView
+        android:id="@+id/text_view_read_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:layout_marginTop="4dp" /> <!-- Initially hidden -->
+
+</LinearLayout>

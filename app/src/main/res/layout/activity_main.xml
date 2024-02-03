@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".MainActivity"
+    android:background="#039BE5">
+
+    <!-- Header to display the application name -->
+    <TextView
+        android:id="@+id/text_view_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Library App"
+        android:textSize="30sp"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingStart="20dp"
+        android:paddingEnd="16dp"
+        android:background="#512DA8" />
+
+    <!-- List view to display books -->
+    <ListView
+        android:id="@+id/list_view_books"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:divider="#757575"
+        android:dividerHeight="1dp"
+        android:listSelector="#E0E0E0"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="16dp"/>
+
+    <!-- Layout for buttons -->
+    <LinearLayout
+        android:id="@+id/layout_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"> <!-- Center the buttons horizontally -->
+
+        <!-- Button to add a book -->
+        <Button
+            android:id="@+id/button_add_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD BOOK" />
+
+        <!-- Button to delete a book -->
+        <Button
+            android:id="@+id/button_delete_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#E64A19"
+            android:text="DELETE BOOK" />
+
+        <!-- Button to edit a book -->
+        <Button
+            android:id="@+id/button_edit_book"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="#DCF308"
+            android:text="EDIT BOOK" />
+    </LinearLayout>
+
+    <!-- Layout for book details -->
+    <LinearLayout
+        android:id="@+id/layout_book_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="16dp">
+
+        <!-- EditText for book title -->
+        <EditText
+            android:id="@+id/edit_text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Book Title"
+            android:inputType="textCapSentences"
+            android:maxLines="1"
+            android:layout_marginBottom="8dp" />
+
+        <!-- EditText for author name -->
+        <EditText
+            android:id="@+id/edit_text_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Author Name"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:layout_marginBottom="8dp" />
+
+        <!-- EditText for genre -->
+        <EditText
+            android:id="@+id/edit_text_genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Genre"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:layout_marginBottom="8dp" />
+
+        <!-- EditText for publication year -->
+        <EditText
+            android:id="@+id/edit_text_publication_year"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Publication Year"
+            android:inputType="number"
+            android:maxLines="1"
+            android:layout_marginBottom="8dp" />
+
+        <!-- CheckBox for read status -->
+        <CheckBox
+            android:id="@+id/checkbox_read_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Read"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Confirmation Button -->
+        <Button
+            android:id="@+id/button_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CONFIRM" />
+    </LinearLayout>
+
+    <!-- Footer layout with total and read book counts -->
+    <LinearLayout
+        android:id="@+id/layout_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <!-- TextView for total books count -->
+        <TextView
+            android:id="@+id/total_books_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Books: 0"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <!-- TextView for read books count -->
+        <TextView
+            android:id="@+id/read_books_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Read: 0"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</LinearLayout>

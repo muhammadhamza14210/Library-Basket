@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BookLibrary</string>
+    <string name="sample_text">sample_text</string>
+    <string name="title_label">Title: %s</string>
+    <string name="author_label">Author: %s</string>
+    <string name="genre_label">Genre: %s</string>
+    <string name="year_label">Year: %s</string>
+</resources>
