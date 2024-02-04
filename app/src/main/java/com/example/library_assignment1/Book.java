@@ -1,5 +1,7 @@
 package com.example.library_assignment1;
 
+import android.widget.Toast;
+
 public class Book {
     private static final int MAX_TITLE_LENGTH = 50;
     private static final int MAX_AUTHOR_LENGTH = 30;
@@ -23,11 +25,12 @@ public class Book {
         return title;
     }
 
-    public void setTitle(String title) {
+    public boolean setTitle(String title) {
         if (title.length() > MAX_TITLE_LENGTH) {
-            this.title = title.substring(0, MAX_TITLE_LENGTH);
+            return false; // Title length exceeds the maximum limit
         } else {
             this.title = title;
+            return true; // Title set successfully
         }
     }
 
@@ -35,11 +38,12 @@ public class Book {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public boolean setAuthor(String author) {
         if (author.length() > MAX_AUTHOR_LENGTH) {
-            this.author = author.substring(0, MAX_AUTHOR_LENGTH);
+            return false; // Author name length exceeds the maximum limit
         } else {
             this.author = author;
+            return true; // Author set successfully
         }
     }
 
@@ -50,16 +54,18 @@ public class Book {
     public void setGenre(String genre){
         this.genre = genre;
     }
+
     public int getPublicationYear() {
         return publicationYear;
     }
 
-    public void setPublicationYear(int publicationYear) {
-        // Ensure the publication year is a 4-digit number
-        if (String.valueOf(publicationYear).length() == PUBLICATION_YEAR_DIGITS) {
-            this.publicationYear = publicationYear;
+    public boolean setPublicationYear(int publicationYear) {
+        if (String.valueOf(publicationYear).length() != PUBLICATION_YEAR_DIGITS) {
+            // Publication year is invalid
+            return false;
         } else {
-            this.publicationYear = 0;
+            this.publicationYear = publicationYear;
+            return true;
         }
     }
 

@@ -135,9 +135,25 @@ public class MainActivity extends AppCompatActivity {
                 boolean readStatus = checkBoxReadStatus.isChecked();
 
                 if (!title.isEmpty() && !author.isEmpty() && !genre.isEmpty()) {
+                    Book newBook = new Book(title, author, genre, publicationYear, readStatus);
+
+                    // Check if setting title, author, and publication year were successful
+                    if (!newBook.setTitle(title)) {
+                        Toast.makeText(MainActivity.this, "Title length exceeds the maximum limit.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (!newBook.setAuthor(author)) {
+                        Toast.makeText(MainActivity.this, "Author name length exceeds the maximum limit.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (!newBook.setPublicationYear(publicationYear)) {
+                        Toast.makeText(MainActivity.this, "Invalid publication year. Please enter a 4-digit number.", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
                     if (book == null) {
                         // Adding a new book
-                        addDataToList(new Book(title, author, genre, publicationYear, readStatus));
+                        addDataToList(newBook);
                     } else {
                         // Editing an existing book
                         editBook(selectedItemPosition, title, author, genre, publicationYear, readStatus);
